@@ -2,14 +2,18 @@ let token = 'ZLJFN27KYX3JQFOV64BA'
 let endpoint = 'categories'
 let url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
 let res
+let loader = document.querySelector('#loader')
 let cats = {}
+let catVal
+var elem = document.getElementById('root');
 
 function handleResponse(res) {
     let categories = res.categories
 
     document.querySelector('#root').innerHTML = '';
     categories.forEach( category  => {
-        cats[category.name] = category.name
+
+        cats[category.id] = category.name
     });
     return cats
 }
@@ -18,7 +22,7 @@ function loadEBApi() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true)
     xhr.onprogress = function () {
-        document.querySelector('#loader').innerHTML = 'loading'
+        loader.innerHTML = 'loading'
     }
 
     xhr.onload = function () {
@@ -26,16 +30,21 @@ function loadEBApi() {
         if ((status >= 200 && status < 300) || status == 304) {
             res = JSON.parse(this.responseText)
             handleResponse(res)
+            
 
-            for (var id in cats) {
+            Object.keys(cats).forEach(function(key) {
+
                 let opt = document.createElement("OPTION")
-                opt.value = cats[id]
-                opt.innerHTML = cats[id]
-                document.querySelector('#root').appendChild(opt)
-            }
-            document.querySelector('#loader').innerHTML = ''
+                opt.value = key
+                opt.innerHTML = cats[key]
+                elem.appendChild(opt)
+              
+              });
+              catVal = elem.value
+              loader.innerHTML = ''
+            
         } else {
-            document.querySelector('#loader').innerHTML = 'Not Found'
+            loader.innerHTML = 'Not Found'
         }
     }
 
@@ -47,3 +56,9 @@ function loadEBApi() {
 }
 
 loadEBApi();
+
+
+
+elem.addEventListener('change', function() {
+    console.log(elem.value)
+}, false);
