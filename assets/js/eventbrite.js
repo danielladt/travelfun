@@ -7,6 +7,7 @@ let cats = {}
 let envs = {}
 let catVal
 var elem = document.getElementById('root');
+let results = document.getElementById('results')
 
 function handleCategoriesEndpointResponse(res) {
     let categories = res.categories
@@ -75,7 +76,20 @@ function loadEBApi(url) {
             } else {
                 handleEventsEndpointResponse(res)
 
+                loader.innerHTML = '';
                 console.log(envs)
+
+                Object.keys(envs).forEach(function(key) {
+
+                    if (key === 'count') {
+                        return
+                    }
+
+                    let li = document.createElement('LI')
+                    li.innerHTML = `<h3>${envs[key].name}</h3>`
+                    li.dataset.id = key
+                    results.appendChild(li)
+                });
 
             }
 
