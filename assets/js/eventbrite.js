@@ -50,8 +50,8 @@ function handleEventsEndpointResponse(res) {
 function loadEBApi(url) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true)
-    xhr.onprogress = function () {
-        loader.innerHTML = 'loading'
+    xhr.onprogress = function (e) {
+        document.body.className = "loading"
     }
 
     xhr.onload = function () {
@@ -72,11 +72,10 @@ function loadEBApi(url) {
                   });
     
                   catVal = elem.value
-                  loader.innerHTML = ''
+                  document.body.className = ""
             } else {
                 handleEventsEndpointResponse(res)
 
-                loader.innerHTML = '';
                 console.log(envs)
 
                 Object.keys(envs).forEach(function(key) {
@@ -90,7 +89,19 @@ function loadEBApi(url) {
                     li.dataset.id = key
                     results.appendChild(li)
                 });
-
+                results.style.display = 'none'
+                setTimeout(function () {
+                    document.body.className = ""
+                    results.style.display = 'block'
+                    
+                    //greensock to stagger the lis
+                    let tl = new TimelineLite()
+                    tl.staggerFrom(results.children, 0.3, {
+                        y: -15,
+                        autoAlpha: 0,
+                        ease: Power1.easeOut
+                    }, 0.05)
+                }, 1500)
             }
 
             
