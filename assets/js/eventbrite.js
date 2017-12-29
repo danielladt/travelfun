@@ -76,6 +76,8 @@ function loadEBApi(url) {
             } else {
                 handleEventsEndpointResponse(res)
 
+                results.innerHTML = ''
+
                 console.log(envs)
 
                 Object.keys(envs).forEach(function(key) {
@@ -84,15 +86,46 @@ function loadEBApi(url) {
                         return
                     }
 
-                    let li = document.createElement('LI')
-                    li.innerHTML = `<h3>${envs[key].name}</h3>`
-                    li.dataset.id = key
-                    results.appendChild(li)
+                    let output = `
+                    <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                            <img src="${envs[key].img}" alt="Travel Fun!">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">${envs[key].name}</p>
+                                    <p class="subtitle is-6"><a href="${envs[key].url}" target="_blank" title="To Event Brite!">Event URL</a></p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                            ${envs[key].description}
+                            <time datetime="2016-1-1">${envs[key].time.start}</time>
+                            </div>
+                        </div>
+                    </div></div>
+                    `
+
+                    // let li = document.createElement('LI')
+                    // li.innerHTML = `<h3>${envs[key].name}</h3>`
+                    // li.dataset.id = key
+                    // results.appendChild(li)
+
+                    if (!output) {
+                        return
+                    }
+
+                    results.innerHTML += output
                 });
                 results.style.display = 'none'
                 setTimeout(function () {
                     document.body.className = ""
-                    results.style.display = 'block'
+                    results.style.display = 'inline-flex'
+                    results.style.flexWrap = 'wrap'
                     
                     //greensock to stagger the lis
                     let tl = new TimelineLite()
@@ -100,7 +133,7 @@ function loadEBApi(url) {
                         y: -15,
                         autoAlpha: 0,
                         ease: Power1.easeOut
-                    }, 0.05)
+                    }, 0.5)
                 }, 1500)
             }
 
@@ -128,7 +161,8 @@ elem.addEventListener('change', function() {
 document.querySelector('#butt').addEventListener('click', function () {
     endpoint = 'events/search'
     url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
-    url += "&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=40.329555&location.longitude=-74.061529&categories=" + catVal + "&location.within=20mi"
+    url += "&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=40.329555&location.longitude=-74.061529&categories=" + catVal + "&location.within=5mi"
     console.log(url)
+    results.innerHTML = ""
     loadEBApi(url)
 })

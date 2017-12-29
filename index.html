@@ -7,12 +7,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
 	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 </head>
 <body>
-	<select id="root"></select>
-	<button id="butt">Search Events</button>
-	<div id="loader"></div>
-	<ul id="results"></ul>
+	<section class="container">
+		<select id="root"></select>
+		<button id="butt">Search Events</button>
+		<div id="loader"></div>
+		<div id="results" class="columns"></div>
+	</section>
 	<script src="./assets/js/eventbrite.js"></script>
 </body>
 </html>

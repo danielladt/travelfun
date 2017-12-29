@@ -20,6 +20,12 @@
     background-color: #34db74;
     animation: flip 1s infinite;
   }
+
+  .card {
+      max-height: 400px;
+      height: auto;
+      overflow-y: auto
+  }
   
   @keyframes flip {
     0% {
