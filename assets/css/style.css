@@ -1,0 +1,56 @@
+/*Home Page*/
+/*First Section*/
+.mainbg {
+	background-image: url("../images/firstpagebg.jpeg");
+}
+
+.appname {
+	font-size: 25px;
+	font-weight: bold;
+}
+#navbarMenuHeroB {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.topofpage{
+	font-size: 66px;
+}
+
+.subfirstsec {
+	font-size: 30px;
+}
+
+.button {
+	font-size: 25px;
+}
+/*End of First Section*/
+
+/*Divider Section*/
+.divider{
+	font-size: 48px;
+}
+/*End of Divider*/
+
+/*Third Section*/
+.thirdsec {
+	background-image: url("../images/friends.jpeg");
+}
+
+.thirdheader {
+	font-size: 55px;
+}
+
+.columns{
+	margin-top: 80px;
+}
+
+.options {
+	margin-left: 250px;
+	width: 200px;
+	font-size: 25px;
+}
+/*End of Third Section*/
+
+
+
