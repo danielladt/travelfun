@@ -4,6 +4,7 @@ let url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
 let res
 let loader = document.querySelector('#loader')
 let cats = {}
+let envs = {}
 let catVal
 var elem = document.getElementById('root');
 
@@ -16,6 +17,33 @@ function handleCategoriesEndpointResponse(res) {
         cats[category.id] = category.short_name
     });
     return cats
+}
+
+function handleEventsEndpointResponse(res) {
+    let events = res.events
+
+    events.forEach( event  => {
+
+        if (!event.logo) {
+            let img = false
+        } else {
+            img = event.logo.original.url
+        }
+
+        envs[event.id] = {
+            name: event.name.text,
+            description: event.description.text,
+            url: event.url,
+            time: {
+                start: event.start.utc,
+                end: event.end.utc
+            },
+            capacity: event.capacity,
+            img: img
+        }
+    });
+    envs["count"] = res.pagination.object_count
+    return envs
 }
 
 function loadEBApi(url) {
@@ -45,7 +73,10 @@ function loadEBApi(url) {
                   catVal = elem.value
                   loader.innerHTML = ''
             } else {
-                console.log(res)
+                handleEventsEndpointResponse(res)
+
+                console.log(envs)
+
             }
 
             
