@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PROJECT</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
+    async defer></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<h1> My Google Map</h1>
+
+	 <div class="container">
+    <input id="userInput" onsubmit="return false" type="text" name="search" placeholder="Search..">
+    <button id="butt" type="submit" onclick="converter()"> Search Events</button>
+    <div id="loader"></div>
+    <div id="searchResults"></div>
+    </div>
+  <div id="map"></div>
+	
+
+<script src="./assets/js/googleplaces.js"></script>
+
+
+
+</body>
+</html>
