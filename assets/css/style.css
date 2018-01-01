@@ -1,56 +1,81 @@
 /*Home Page*/
 /*First Section*/
-.mainbg {
+#mainbg {
 	background-image: url("../images/firstpagebg.jpeg");
+	background-repeat: no-repeat;
 }
 
-.appname {
-	font-size: 25px;
+#appname {
+	font-size: 35px;
 	font-weight: bold;
 }
 #navbarMenuHeroB {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
-.topofpage{
-	font-size: 66px;
+#topofpage{
+	font-size: 70px;
 }
 
-.subfirstsec {
+#subfirstsec {
 	font-size: 30px;
 }
 
-.button {
+#submitbtn {
 	font-size: 25px;
 }
 /*End of First Section*/
 
 /*Divider Section*/
-.divider{
+#divider{
 	font-size: 48px;
+	word-spacing: 20px;
 }
 /*End of Divider*/
 
 /*Third Section*/
-.thirdsec {
+#thirdsec {
 	background-image: url("../images/friends.jpeg");
+	background-repeat: no-repeat;
 }
 
-.thirdheader {
-	font-size: 55px;
-}
-
-.columns{
+#thirdheader {
+	font-size: 60px;
 	margin-top: 80px;
 }
 
-.options {
-	margin-left: 250px;
-	width: 200px;
-	font-size: 25px;
+#subthird {
+	font-size: 48px;
 }
+
+.options {
+	font-size: 35px;
+	background-color: #00d1b2;
+	padding: 20px;
+}
+
 /*End of Third Section*/
+
+/*Footer*/
+.footer {
+	background-color: #00d1b2;
+}
+/*End of Footer*/
+/*End of Home Page*/
+
+/*Trip Results Page*/
+#results {
+	align-items: inherit;
+}
+
+/*Contact Page*/
+#contact {
+	font-size: 38px;
+}
+
+/*Start of Media Queries*/
+
 
 
 
