@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day Trip - Home</title>
+
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Sean: Temporary untill I can refactor my code 
+    	<section class="container">
+          <select id="root"></select>
+          <button id="butt">Search Events</button>
+          <div id="loader"></div>
+          <div id="results" class="columns"></div>
+        </section>
+    <!-- First Section - Top of Page -->
+    <section class="hero is-primary is-large">
+
+      <!-- Header -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item is-active appname">
+                  DAY TRIP
+                </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active">
+                  Home
+                </a>
+                <a class="navbar-item">
+                  Trip
+                </a>
+                <a class="navbar-item">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- End of Header -->
+
+      <!-- Content Begins -->
+      <div class="hero-body mainbg">
+        <div class="container has-text-centered">
+          <p class="title has-text-black topofpage">
+            Start Your Journey Today
+          </p>
+          <br>
+          <p class="subtitle has-text-black has-text-weight-semibold subfirstsec">
+            Choose from a variety of events and activities <br>anywhere in the world
+          </p>
+          <br>
+          <br>
+
+          <!-- Form Field -->
+          <div class="field is-grouped is-grouped-centered">
+            <div class="column control has-icons-left has-icons-right">
+              <input class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
+              <span class="icon is-small is-left">
+                <i class="fa fa-globe"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+              </span>
+            </div>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium is-primary" type="text" placeholder="Enter Date (MM/DD/YY)">
+              <span class="icon is-small is-left">
+                <i class="fa fa-calendar"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+              </span>
+            </div>
+          </div>
+          <br>
+
+          <!-- Submit Button - takes user to bottom of page-->
+          <div class="control has-text-centered">
+            <a class="button is-primary" href="#third" input class="button" type="submit" value="Submit input">I'M READY
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of First Section -->
+
+
+    <!-- Divider Section - *Do you think we need this? Do we like it? -->
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title divider">
+            GET STARTED
+          </h1>
+        </div>
+      </div>
+    </section>
+    <!-- End of Divider -->
+
+    <!-- Third Section - Bottom of page -->
+    <section class="hero is-primary is-large"> <a name="third"></a>
+      <div class="hero-body thirdsec">
+        <div class="container has-text-centered">
+          <h1 class="title thirdheader has-text-black">
+            Begin Your Day Trip
+          </h1>
+        </div>
+        <br>
+
+        <!-- 2 Columns with choices for user -->
+        <div class="columns">
+          <div class="column">
+            <div class="card options">
+              <div class="card-content">
+                <div class="content has-text-centered has-text-weight-semibold">
+                  EVENTS
+                  <a href="trips.html"></a><a href="#"></a> <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card options">
+              <div class="card-content">
+                <div class="content has-text-centered has-text-weight-semibold">
+                  ACTIVITIES
+                  <a href=".trips.html"></a><a href="#"></a> <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Third Section -->
+
+    <!-- Javascript Links -->
+
+    <!-- <script src="./assets/js/eventbrite.js"></script> -->
+  </body>
+</html>
