@@ -8,22 +8,31 @@
 #appname {
 	font-size: 35px;
 	font-weight: bold;
+	font-family: 'Courgette', cursive;
 }
 #navbarMenuHeroB {
 	font-size: 20px;
 	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
 }
 
 #topofpage{
 	font-size: 70px;
+	font-family: 'Roboto', sans-serif;
 }
 
 #subfirstsec {
 	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.input {
+	font-family: 'Roboto', sans-serif;
 }
 
 #submitbtn {
 	font-size: 25px;
+	font-family: 'Courgette', cursive;
 }
 /*End of First Section*/
 
@@ -31,6 +40,7 @@
 #divider{
 	font-size: 48px;
 	word-spacing: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 /*End of Divider*/
 
@@ -43,16 +53,19 @@
 #thirdheader {
 	font-size: 60px;
 	margin-top: 80px;
+	font-family: 'Roboto', sans-serif;
 }
 
 #subthird {
 	font-size: 48px;
+	font-family: 'Roboto', sans-serif;
 }
 
 .options {
 	font-size: 35px;
 	background-color: #00d1b2;
 	padding: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 
 /*End of Third Section*/
@@ -60,6 +73,7 @@
 /*Footer*/
 .footer {
 	background-color: #00d1b2;
+	font-family: 'Roboto', sans-serif;
 }
 /*End of Footer*/
 /*End of Home Page*/
@@ -72,8 +86,16 @@
 /*Contact Page*/
 #contact {
 	font-size: 38px;
+	font-family: 'Roboto', sans-serif;
 }
 
+.contactform {
+	font-family: 'Roboto', sans-serif;
+}
+
+.formbtn {
+	font-family: 'Roboto', sans-serif;
+}
 /*Start of Media Queries*/
 
 
