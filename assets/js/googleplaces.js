@@ -39,8 +39,6 @@ var place = [];
         var input = document.getElementById('userInput');
         var autocomplete = new google.maps.places.Autocomplete(input);
 
-
-      
       // locating the address on the map
       function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById("userInput").value;
@@ -55,10 +53,46 @@ var place = [];
             var latitude = results[0].geometry.location.lat();;
             var longitude = results[0].geometry.location.lng();;
             console.log(latitude);
-            console.log(longitude);    
+            console.log(longitude);
+            var loc = {
+              latitude,
+              longitude
+            } 
+            console.log(loc);
+            type  = getType()
+            initialize(loc.latitude, loc.longitude, type);
           }
         })
       }
+
+
+
+    function initialize(lat, long) {
+      var pyrmont = new google.maps.LatLng(lat, long);
+
+      var request = {
+        location: pyrmont,
+        radius: '20',
+        type: [type]
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    }
+
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          console.log(place);
+          createMarker(results[i]);
+        }
+      }
+    }
+
+    function createMarker(place) {
+
+    }
   }
 
 
