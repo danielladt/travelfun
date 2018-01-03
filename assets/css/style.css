@@ -1,46 +1,68 @@
+/* Shared CSS */
+
+.section-bg {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
 /*Home Page*/
 /*First Section*/
-.mainbg {
+#mainbg {
 	background-image: url("../images/firstpagebg.jpeg");
 }
 
-.appname {
-	font-size: 25px;
+#appname {
+	font-size: 35px;
 	font-weight: bold;
+	font-family: 'Courgette', cursive;
 }
 #navbarMenuHeroB {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
 }
 
-.topofpage{
-	font-size: 66px;
+#topofpage{
+	font-size: 70px;
+	font-family: 'Roboto', sans-serif;
 }
 
-.subfirstsec {
+#subfirstsec {
 	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
 }
 
-.button {
+.input {
+	font-family: 'Roboto', sans-serif;
+}
+
+#submitbtn {
 	font-size: 25px;
+	font-family: 'Courgette', cursive;
 }
 /*End of First Section*/
 
 /*Divider Section*/
-.divider{
+#divider{
 	font-size: 48px;
+	word-spacing: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 /*End of Divider*/
 
 /*Third Section*/
-.thirdsec {
+#thirdsec {
 	background-image: url("../images/friends.jpeg");
 }
 
-.thirdheader {
-	font-size: 55px;
+#thirdheader {
+	font-size: 60px;
+	margin-top: 80px;
+	font-family: 'Roboto', sans-serif;
 }
 
+<<<<<<< HEAD
 /* .columns{
 	margin-top: 80px;
 }
@@ -50,7 +72,50 @@
 	width: 200px;
 	font-size: 25px;
 } */
+=======
+#subthird {
+	font-size: 48px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.options {
+	font-size: 35px;
+	background-color: #00d1b2;
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+
+>>>>>>> daniellabranch
 /*End of Third Section*/
+
+/*Footer*/
+.footer {
+	background-color: #00d1b2;
+	font-family: 'Roboto', sans-serif;
+}
+/*End of Footer*/
+/*End of Home Page*/
+
+/*Trip Results Page*/
+#results {
+	align-items: inherit;
+}
+
+/*Contact Page*/
+#contact {
+	font-size: 38px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contactform {
+	font-family: 'Roboto', sans-serif;
+}
+
+.formbtn {
+	font-family: 'Roboto', sans-serif;
+}
+/*Start of Media Queries*/
+
 
 
 /* CSS Loader for AJAX Requests */

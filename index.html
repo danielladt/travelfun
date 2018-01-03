@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
+=======
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
+>>>>>>> daniellabranch
   </head>
 
   <body>
@@ -30,7 +34,7 @@
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
-              <a class="navbar-item is-active appname">
+              <a class="navbar-item is-active" id="appname">
                   DAY TRIP
                 </a>
               <span class="navbar-burger burger" data-target="navbarMenuHeroB">
@@ -41,14 +45,14 @@
             </div>
             <div id="navbarMenuHeroB" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active">
+                <a href="index.html" class="navbar-item is-active">
                   Home
                 </a>
-                <a class="navbar-item">
+                <a href="trips.html" class="navbar-item">
                   Trip
                 </a>
-                <a class="navbar-item">
-                  Contact Us
+                <a href="contact.html" class="navbar-item">
+                  Contact
                 </a>
               </div>
             </div>
@@ -58,19 +62,20 @@
       <!-- End of Header -->
 
       <!-- Content Begins -->
-      <div class="hero-body mainbg">
+      <div class="hero-body section-bg" id="mainbg">
         <div class="container has-text-centered">
-          <p class="title has-text-black topofpage">
+          <p class="title has-text-black" id="topofpage">
             Start Your Journey Today
           </p>
           <br>
-          <p class="subtitle has-text-black has-text-weight-semibold subfirstsec">
+          <p class="subtitle has-text-black has-text-weight-semibold" id="subfirstsec">
             Choose from a variety of events and activities <br>anywhere in the world
           </p>
           <br>
           <br>
 
           <!-- Form Field -->
+<<<<<<< HEAD
           <div class="field is-grouped is-grouped-centered">
             <div class="column control has-icons-left has-icons-right">
               <input class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
@@ -89,13 +94,41 @@
               <span class="icon is-small is-right">
                 <i class="fa fa-check"></i>
               </span>
+=======
+          <div class="columns">
+            <div class="column">
+                <div class="field">
+                  <div class="control has-icons-left has-icons-right">
+                    <input class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-globe"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                      <i class="fa fa-check"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <div class="control has-icons-left has-icons-right">
+                    <input class="input is-medium is-primary" type="text" placeholder="Enter Date (MM/DD/YY)">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-calendar"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                      <i class="fa fa-check"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+>>>>>>> daniellabranch
             </div>
-          </div>
           <br>
 
           <!-- Submit Button - takes user to bottom of page-->
           <div class="control has-text-centered">
-            <a class="button is-primary" href="#third" input class="button" type="submit" value="Submit input">I'M READY
+            <a class="button is-primary" href="#third" input class="button" id="submitbtn" type="submit" value="Submit input">I'm Ready
             </a>
           </div>
         </div>
@@ -108,8 +141,8 @@
     <section class="hero is-medium is-primary is-bold">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title divider">
-            GET STARTED
+          <h1 class="title" id="divider">
+            DISCOVER. TRAVEL. ENJOY.
           </h1>
         </div>
       </div>
@@ -117,41 +150,41 @@
     <!-- End of Divider -->
 
     <!-- Third Section - Bottom of page -->
-    <section class="hero is-primary is-large"> <a name="third"></a>
-      <div class="hero-body thirdsec">
-        <div class="container has-text-centered">
-          <h1 class="title thirdheader has-text-black">
-            Begin Your Day Trip
-          </h1>
-        </div>
+    <section class="hero is-primary is-large section-bg" id="thirdsec"> <a name="third"></a>
+      <div class="hero-header">
+        <h1 class="title has-text-black has-text-centered" id="thirdheader">
+          Begin Your Day Trip
+        </h1>
         <br>
-
-        <!-- 2 Columns with choices for user -->
-        <div class="columns">
-          <div class="column">
-            <div class="card options">
-              <div class="card-content">
-                <div class="content has-text-centered has-text-weight-semibold">
-                  EVENTS
-                  <a href="trips.html"></a><a href="#"></a> <a href="#"></a>
-                </div>
-              </div>
+        <br>
+        <h3 class="subtitle has-text-black has-text-centered" id="subthird">
+          Select ONE
+        </h3>
+      </div>
+  
+      <div class="hero-body">
+        <div class="container">
+          <!-- 2 Columns with choices for user -->
+          <div class="columns" id="choices">
+            <div class="column is-4 is-offset-1">
+              <p class="options has-text-white has-text-centered has-text-weight-semibold"> EVENTS </p>
             </div>
-          </div>
-          <div class="column">
-            <div class="card options">
-              <div class="card-content">
-                <div class="content has-text-centered has-text-weight-semibold">
-                  ACTIVITIES
-                  <a href=".trips.html"></a><a href="#"></a> <a href="#"></a>
-                </div>
-              </div>
+            <div class="column is-4 is-offset-2">
+              <p class="options has-text-white has-text-centered has-text-weight-semibold"> ACTIVITIES </p>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- End of Third Section -->
+
+    <!-- Start of Footer -->
+    <div class="footer">
+      <div class="content has-text-centered">
+        <strong>Day Trip</strong> by The Road Dogs - Copyright 2017.
+      </div>
+    </div>
+    <!-- End of Footer -->
 
     <!-- Javascript Links -->
 

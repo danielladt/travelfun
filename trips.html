@@ -9,5 +9,112 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
   </head>
+
+  <body>
+  	<!-- Top Page -->
+  	<section class="hero is-primary is-fullheight">
+
+      <!-- Header -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item is-active" id="appname">
+                 DAY TRIP
+                </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-end">
+                <a href="index.html" class="navbar-item">
+                  Home
+                </a>
+                <a href="trips.html" class="navbar-item is-active">
+                  Trip
+                </a>
+                <a href="contact.html" class="navbar-item">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- End of Header -->
+
+      <!-- Content Begins -->
+      <div class="hero-body" id="results">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+                <div class="tile is-ancestor">
+                  <div class="tile is-vertical">
+                    <div class="tile">
+                      <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-warning">
+                          <p class="title has-text-dark"> Selection </p>
+                          <p class="content has-text-dark">
+                            Location
+                            Date
+                            Category
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="tile is-ancestor">
+                  <div class="tile is-vertical">
+                    <div class="tile">
+                      <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification">
+                          <p class="title has-text-dark"> Results </p>
+                          <p class="content has-text-dark">
+                            Google or Eventbrite APIs
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="column">
+              <div class="tile is-ancestor">
+                <div class="tile is-vertical">
+                  <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                      <article class="tile is-child notification is-warning">
+                        <p class="title has-text-dark">TOP 5</p>
+                        <p class="content has-text-dark">
+                          Base on user's selection
+                        </p>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  	</section>
+    <!-- End of Content -->
+
+    <!-- Start of Footer -->
+    <div class="footer">
+      <div class="content has-text-centered">
+        <strong>Day Trip</strong> by The Road Dogs - Copyright 2017.
+      </div>
+    </div>
+    <!-- End of Footer -->
+
+  </body>
+</html>
