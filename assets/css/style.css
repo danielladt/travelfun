@@ -1,8 +1,15 @@
+/* Shared CSS */
+
+.section-bg {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
 /*Home Page*/
 /*First Section*/
 #mainbg {
 	background-image: url("../images/firstpagebg.jpeg");
-	background-repeat: no-repeat;
 }
 
 #appname {
@@ -47,7 +54,6 @@
 /*Third Section*/
 #thirdsec {
 	background-image: url("../images/friends.jpeg");
-	background-repeat: no-repeat;
 }
 
 #thirdheader {
