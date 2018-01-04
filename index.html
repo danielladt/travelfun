@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+            <!DOCTYPE html> 
 <html>
   <head>
     <meta charset="utf-8">
@@ -12,18 +12,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
+=======
+ <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+>>>>>>> CarpeDiemNan-patch-1
   </head>
 
   <body>
-    <!-- Sean: Temporary untill I can refactor my code 
+    <!-- Sean: Temporary untill I can refactor my code  -->
     	<section class="container">
           <select id="root"></select>
           <button id="butt">Search Events</button>
           <div id="loader"></div>
           <div id="results" class="columns"></div>
         </section>
-    <!-- First Section - Top of Page -->
+    <!-- First Section - Top of Page
     <section class="hero is-primary is-large">
 
       <!-- Header -->
@@ -74,7 +83,7 @@
           <!-- Form Field -->
           <div class="field is-grouped is-grouped-centered">
             <div class="column control has-icons-left has-icons-right">
-              <input class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
+              <input class="input is-medium is-primary" type="text" id="userDestination" placeholder="Enter your Destination">
               <span class="icon is-small is-left">
                 <i class="fa fa-globe"></i>
               </span>
@@ -122,7 +131,11 @@
 
           <!-- Submit Button - takes user to bottom of page-->
           <div class="control has-text-centered">
+<<<<<<< HEAD
             <a class="button is-primary" href="#third" input class="button" id="submitbtn" type="submit" value="Submit input">I'm Ready
+=======
+            <a class="button is-primary" href="#third" input class="button" type="submit" id="submitButton" value="Submit input">I'M READY
+>>>>>>> CarpeDiemNan-patch-1
             </a>
           </div>
         </div>
@@ -150,6 +163,7 @@
           Begin Your Day Trip
         </h1>
         <br>
+<<<<<<< HEAD
         <br>
         <h3 class="subtitle has-text-black has-text-centered" id="subthird">
           Select ONE
@@ -165,6 +179,29 @@
             </div>
             <div class="column is-4 is-offset-2">
               <p class="options has-text-white has-text-centered has-text-weight-semibold"> ACTIVITIES </p>
+=======
+
+        <!-- 2 Columns with choices for user -->
+        <div class="columns">
+          <div class="column">
+            <div class="card options">
+              <div class="card-content">
+                <div class="content has-text-centered has-text-weight-semibold">
+                  EVENTS
+                  <a href="trips.html" id="events"></a><a href="#"></a> <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card options">
+              <div class="card-content">
+                <div class="content has-text-centered has-text-weight-semibold">
+                  ACTIVITIES
+                  <a href=".trips.html" id="activities"></a><a href="#"></a> <a href="#"></a>
+                </div>
+              </div>
+>>>>>>> CarpeDiemNan-patch-1
             </div>
           </div>
         </div>
@@ -182,6 +219,7 @@
 
     <!-- Javascript Links -->
 
-    <!-- <script src="./assets/js/eventbrite.js"></script> -->
+    <script src="./assets/js/eventbrite.js"></script>
+    <script src="./assets/js/firebase.js"></script>
   </body>
 </html>
