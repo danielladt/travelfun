@@ -1,4 +1,4 @@
-            <!DOCTYPE html> 
+<!DOCTYPE html> 
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
+    async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
   </head>
 
   <body>
@@ -122,11 +125,8 @@
 
           <!-- Submit Button - takes user to bottom of page-->
           <div class="control has-text-centered">
-<<<<<<< HEAD
             <a class="button is-primary" href="#third" input class="button" id="submitbtn" type="submit" value="Submit input">I'm Ready
-=======
             <a class="button is-primary" href="#third" input class="button" type="submit" id="submitButton" value="Submit input">I'M READY
->>>>>>> CarpeDiemNan-patch-1
             </a>
           </div>
         </div>
@@ -154,7 +154,6 @@
           Begin Your Day Trip
         </h1>
         <br>
-<<<<<<< HEAD
         <br>
         <h3 class="subtitle has-text-black has-text-centered" id="subthird">
           Select ONE
@@ -170,29 +169,6 @@
             </div>
             <div class="column is-4 is-offset-2">
               <p class="options has-text-white has-text-centered has-text-weight-semibold"> ACTIVITIES </p>
-=======
-
-        <!-- 2 Columns with choices for user -->
-        <div class="columns">
-          <div class="column">
-            <div class="card options">
-              <div class="card-content">
-                <div class="content has-text-centered has-text-weight-semibold">
-                  EVENTS
-                  <a href="trips.html" id="events"></a><a href="#"></a> <a href="#"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card options">
-              <div class="card-content">
-                <div class="content has-text-centered has-text-weight-semibold">
-                  ACTIVITIES
-                  <a href=".trips.html" id="activities"></a><a href="#"></a> <a href="#"></a>
-                </div>
-              </div>
->>>>>>> CarpeDiemNan-patch-1
             </div>
           </div>
         </div>
@@ -208,8 +184,25 @@
     </div>
     <!-- End of Footer -->
 
+    <!-- divyas stuff -->
+    <div class="container">
+      <input id="userInput" onsubmit="return false" type="text" name="search" placeholder="Search..">
+      <select name="type" id="type" value="3">
+            <option>Restaurant</option>
+            <option>Bar</option>
+            <option>Shopping Mall</option>
+            <option>Museum</option>
+            <option>Amusement Park</option>
+    </select>
+      <button id="butt" type="submit" onclick="converter()"> Search Events</button>
+      <div id="loader"></div>
+      <div id="map"></div>
+    <div id="searchResults"></div>
+      </div>
+
     <!-- Javascript Links -->
 
+    <script src="./assets/js/googleplaces.js"></script>
     <script src="./assets/js/eventbrite.js"></script>
     <script src="./assets/js/firebase.js"></script>
   </body>
