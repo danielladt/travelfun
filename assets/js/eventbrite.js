@@ -9,6 +9,8 @@ let catVal
 var elem = document.getElementById('root');
 let results = document.getElementById('results')
 
+console.log('eventbrite')
+
 /**
  * @param {*} res type object
  * @return {*} cats type object
@@ -36,7 +38,6 @@ function handleCategoriesEndpointResponse(res) {
  */
 function handleEventsEndpointResponse(res) {
     let events = res.events
-    
 
     events.forEach( event  => {
 
@@ -107,7 +108,7 @@ function loadEBApi(url) {
                   });
                   //set a default category value
                   catVal = elem.value
-                  //remove the loader created by onload function
+                  //remove the loader created by onprogress function
                   document.body.className = ""
             } else {
                 //if categories is not the endpoint, then we are in the events endpoint
