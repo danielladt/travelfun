@@ -59,21 +59,18 @@ var place = [];
               longitude
             } 
             console.log(loc);
-            type  = getType()
-            initialize(loc.latitude, loc.longitude, type);
+            initialize(loc.latitude, loc.longitude)
           }
         })
       }
 
-
-
-    function initialize(lat, long) {
+      function initialize(lat, long) {
       var pyrmont = new google.maps.LatLng(lat, long);
 
       var request = {
         location: pyrmont,
-        radius: '20',
-        type: [type]
+        radius: '500',
+        type: ['restaurant']
       };
 
       service = new google.maps.places.PlacesService(map);
@@ -85,15 +82,25 @@ var place = [];
         for (var i = 0; i < results.length; i++) {
           var place = results[i];
           console.log(place);
-          createMarker(results[i]);
+          //createMarker(results[i]);
         }
       }
     }
 
-    function createMarker(place) {
+   /* function createMaker(place) {
+      var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
 
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }*/
     }
-  }
+  
 
 
 
