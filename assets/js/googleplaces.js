@@ -9,7 +9,7 @@ var address;
 var service;
 var latitude;
 var longitude;
-var place = [];
+var place =[];
 
   // turning the user input into address for google
     function converter() {
@@ -22,17 +22,22 @@ var place = [];
   
     function initMap() {
         //google map
-      	var map = new google.maps.Map(document.getElementById("map"),{
-          zoom:15,
-          center: {lat: 42.3601, lng: -71.0589}
-      	});
-        var geocoder = new google.maps.Geocoder();
+        var mapOptions = {
+          zoom:11,
+          center: new google.maps.LatLng(40.6700, -73.9400),
+          styles: [{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]
+        }
 
+      	var mapElement = document.getElementById("map");
+
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var geocoder = new google.maps.Geocoder();
+        infowindow = new google.maps.InfoWindow();
         var address = document.getElementById("userInput").value;
 
         //event listener 
         document.getElementById("butt").addEventListener("click", function(){
-          geocodeAddress(geocoder, map);
+          geocodeAddress(geocoder, map), getType();
         });
 
         // autocomplete
@@ -64,6 +69,20 @@ var place = [];
         })
       }
 
+    var type = ['restaurant' ,  'bar' , 'shopping_mall' , 'museum' , 'amusement_park'];
+    var arrayType = type.length
+    
+
+    function getType() {
+      var select = document.getElementById("selectType");
+      var objSelect = select.selectedIndex;
+      console.log(objSelect); 
+      
+      }
+      
+    
+
+
       function initialize(lat, long) {
       var pyrmont = new google.maps.LatLng(lat, long);
 
@@ -72,6 +91,7 @@ var place = [];
         radius: '500',
         type: ['restaurant']
       };
+
 
       service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
@@ -82,12 +102,12 @@ var place = [];
         for (var i = 0; i < results.length; i++) {
           var place = results[i];
           console.log(place);
-          //createMarker(results[i]);
+          createMarker(results[i]);
         }
       }
     }
 
-   /* function createMaker(place) {
+   function createMarker(place) {
       var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
@@ -97,8 +117,9 @@ var place = [];
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
           infowindow.open(map, this);
+          document.getElementById("searchResults").innerHTML= place.name + "<br />" + "address:" + place.vicinity + "<br />" + "rating:" + place.rating;
         });
-      }*/
+      }
     }
   
 
