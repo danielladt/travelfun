@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html> 
 <html>
   <head>
@@ -81,6 +82,38 @@
               </div>
             </div>
           <br> <!-- css -->
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PROJECT</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <!--NEED TO ADD THIS-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
+    async defer></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<h1> My Google Map</h1>
+
+	 <div class="container">
+    <input id="userInput" onsubmit="return false" type="text" name="search" placeholder="Search..">
+    <select name="type" id="selectType" value="text">
+          <option value="restaurant">Restaurant</option>
+          <option value="bar">Bar</option>
+          <option value="shopping_mall">Shopping Mall</option>
+          <option value="museum">Museum</option>
+          <option value="amusement_park">Amusement Park</option>
+  </select>
+    <button id="butt" type="submit" onclick="converter()"> Search Events</button>
+    <!--<div id="loader"></div> -->
+    <div id="map"></div>
+  <div id="searchResults"></div>
+    </div>
+  
+>>>>>>> divya-googleplaces
 
           <!-- Submit Button - takes user to bottom of page-->
           <div class="control has-text-centered">
