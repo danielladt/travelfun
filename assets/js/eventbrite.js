@@ -9,6 +9,8 @@ let catVal
 var elem = document.getElementById('root');
 let results = document.getElementById('results')
 
+console.log('eventbrite')
+
 /**
  * @param {*} res type object
  * @return {*} cats type object
@@ -36,7 +38,6 @@ function handleCategoriesEndpointResponse(res) {
  */
 function handleEventsEndpointResponse(res) {
     let events = res.events
-    
 
     events.forEach( event  => {
 
@@ -58,7 +59,6 @@ function handleEventsEndpointResponse(res) {
             capacity: event.capacity,
             img: img
         }
-        console.log(envs[event.id] );
     });
     envs["count"] = res.pagination.object_count
     return envs
@@ -92,7 +92,7 @@ function loadEBApi(url) {
         if ((status >= 200 && status < 300) || status == 304) {
             //status was good, parse into JSON
             res = JSON.parse(this.responseText)
-            console.log(res);
+
             if (endpoint == 'categories') {
                 handleCategoriesEndpointResponse(res)
     
@@ -107,7 +107,7 @@ function loadEBApi(url) {
                   });
                   //set a default category value
                   catVal = elem.value
-                  //remove the loader created by onload function
+                  //remove the loader created by onprogress function
                   document.body.className = ""
             } else {
                 //if categories is not the endpoint, then we are in the events endpoint

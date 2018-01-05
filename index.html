@@ -6,24 +6,21 @@
     <title>Day Trip - Home</title>
 
     <!-- CSS LINKS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" id="bootstrap" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" id="bulma" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" id="main-style" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Courgette|Roboto" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
     async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
   </head>
 
   <body>
-    <!-- First Section - Top of Page -->
+    <!-- First Section - Top of Page - Navigatation -->
     <section class="hero is-primary is-large">
-
-      <!-- Header -->
-      <div class="hero-head">
+      <div class="hero-head"> <!-- Header -->
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
@@ -51,65 +48,52 @@
             </div>
           </div>
         </nav>
-      </div>
-      <!-- End of Header -->
+      </div> <!-- End of Header -->
 
       <!-- Content Begins -->
       <div class="hero-body section-bg" id="mainbg">
-        <div class="container has-text-centered">
+        <div class="container has-text-centered"><!-- bulma docs ? all good : container used multiple times -->
           <p class="title has-text-black" id="topofpage">
             Start Your Journey Today
           </p>
-          <br>
+          <br><!-- should be done with css  -->
           <p class="subtitle has-text-black has-text-weight-semibold" id="subfirstsec">
             Choose from a variety of events and activities <br>anywhere in the world
           </p>
           <br>
           <br>
-
-          <!-- Form Field -->
-          <div class="columns">
+          <div class="columns"> <!-- Form Field -->
             <div class="column">
                 <div class="field">
                   <div class="control has-icons-left has-icons-right">
                     <input class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-globe"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="fa fa-check"></i>
-                    </span>
+                    <span class="icon is-small is-left"><i class="fa fa-globe"></i></span>
+                    <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
                   </div>
                 </div>
               </div>
-              <div class="column">
+              <div class="column"> <!-- two many divs? -->
                 <div class="field">
                   <div class="control has-icons-left has-icons-right">
                     <input class="input is-medium is-primary" type="text" placeholder="Enter Date (MM/DD/YY)">
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-calendar"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="fa fa-check"></i>
-                    </span>
+                    <span class="icon is-small is-left"><i class="fa fa-calendar"></i></span>
+                    <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
                   </div>
                 </div>
               </div>
             </div>
-          <br>
-
+          <br> <!-- css -->
           <!-- Submit Button - takes user to bottom of page-->
           <div class="control has-text-centered">
-            <a class="button is-primary" href="#third" input class="button" id="submitbtn" type="submit" value="Submit input">I'm Ready
+            <a class="button is-primary" href="#third" input class="button" id="submit-btn" type="submit" value="Submit input">I'm Ready
             </a>
           </div>
         </div>
       </div>
-    </section>
-    <!-- End of First Section -->
-
+    </section> <!-- End of First Section -->
 
     <!-- Divider Section - *Do you think we need this? Do we like it? -->
+    <!-- Looks great. Let's put some UX into the scroll -->
     <section class="hero is-medium is-primary is-bold">
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -118,8 +102,7 @@
           </h1>
         </div>
       </div>
-    </section>
-    <!-- End of Divider -->
+    </section> <!-- End of Divider -->
 
     <!-- Third Section - Bottom of page -->
     <section class="hero is-primary is-large section-bg" id="thirdsec"> <a name="third"></a>
@@ -129,9 +112,7 @@
         </h1>
         <br>
         <br>
-        <h3 class="subtitle has-text-black has-text-centered" id="subthird">
-          Select ONE
-        </h3>
+        <h3 class="subtitle has-text-black has-text-centered" id="subthird">Select ONE</h3>
       </div>
   
       <div class="hero-body">
@@ -139,10 +120,10 @@
           <!-- 2 Columns with choices for user -->
           <div class="columns" id="choices">
             <div class="column is-4 is-offset-1">
-              <p class="options has-text-white has-text-centered has-text-weight-semibold"> EVENTS </p>
+              <p class="options has-text-white has-text-centered has-text-weight-semibold">EVENTS</p>
             </div>
             <div class="column is-4 is-offset-2">
-              <p class="options has-text-white has-text-centered has-text-weight-semibold"> ACTIVITIES </p>
+              <p class="options has-text-white has-text-centered has-text-weight-semibold">ACTIVITIES</p>
             </div>
           </div>
         </div>
@@ -159,9 +140,9 @@
     <!-- End of Footer -->
 
     <!-- Javascript Links -->
-
-    <script src="./assets/js/googleplaces.js"></script>
-    <script src="./assets/js/eventbrite.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/googleplaces.js"></script>
   </body>
 </html>

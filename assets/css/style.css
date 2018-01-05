@@ -37,11 +37,10 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-#submitbtn {
+#submit-btn {
 	font-size: 25px;
 	font-family: 'Courgette', cursive;
 }
-/*End of First Section*/
 
 /*Divider Section*/
 #divider{
@@ -82,8 +81,8 @@
 	font-family: 'Roboto', sans-serif;
 	padding: 30px;
 }
-/*End of Footer*/
-/*End of Home Page*/
+
+
 
 /*Trip Results Page*/
 #results {
@@ -109,46 +108,46 @@
 
 /* CSS Loader for AJAX Requests */
 .loading {
-    width: 100%;
-    height: 100vh;
-    border-radius: 100%;
-    position: relative;
-    margin: 0 auto;
-    -webkit-perspective: 120px;
-    -moz-perspective: 120px;
-    -ms-perspective: 120px;
-    perspective: 120px;
-  }
+  width: 100%;
+  height: 100vh;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+  -webkit-perspective: 120px;
+  -moz-perspective: 120px;
+  -ms-perspective: 120px;
+  perspective: 120px;
+}
   
-  .loading:before{
-    content: "";
-    position: absolute;
-    left: calc(50% - 25px);
-    top: calc(50% - 25px);
-    width: 50px;
-    height: 50px;
-    background-color: #34db74;
-    animation: flip 1s infinite; /* see keyframes */
+.loading:before{
+  content: "";
+  position: absolute;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  background-color: #34db74;
+  animation: flip 1s infinite; /* see keyframes */
+}
+
+/* NEED more specific css for card, quick fix here */
+/* .card {
+    max-height: 400px;
+    height: auto;
+    overflow-y: auto
+}
+  */
+@keyframes flip {
+  0% {
+    transform: rotate(0);
   }
 
-  /* NEED more specific css for css, quick fix here */
-  /* .card {
-      max-height: 400px;
-      height: auto;
-      overflow-y: auto
+  50% {
+    transform: rotateY(180deg);
   }
-   */
-  @keyframes flip {
-    0% {
-      transform: rotate(0);
-    }
-  
-    50% {
-      transform: rotateY(180deg);
-    }
-  
-    100% {
-      transform: rotateY(180deg)  rotateX(180deg);
-    }
+
+  100% {
+    transform: rotateY(180deg)  rotateX(180deg);
   }
+}
   
