@@ -53,7 +53,7 @@
       </div> <!-- End of Header -->
 
       <!-- Content Begins -->
-      <div class="hero-body section-bg" id="mainbg">
+      <div class="hero-body section-bg" id="main-bg">
         <div class="container has-text-centered"><!-- bulma docs ? all good : container used multiple times -->
           <p class="title has-text-black" id="topofpage">
             Start Your Journey Today
@@ -63,14 +63,14 @@
           </p>
           <div class="columns"> <!-- Form Field -->
             <div class="column">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input id="userInput" class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
-                    <span class="icon is-small is-left"><i class="fa fa-globe"></i></span>
-                    <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
-                  </div>
+              <div class="field">
+                <div class="control has-icons-left has-icons-right">
+                  <input id="userInput" class="input is-medium is-primary" type="text" placeholder="Enter your Destination">
+                  <span class="icon is-small is-left"><i class="fa fa-globe"></i></span>
+                  <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
                 </div>
               </div>
+
               <div class="column"> <!-- two many divs? -->
                 <div class="field">
                   <div class="control has-icons-left has-icons-right">
@@ -81,12 +81,13 @@
                 </div>
               </div>
             </div>
-
-          <!-- Submit Button - takes user to bottom of page-->
-          <div class="control has-text-centered">
-            <a class="button is-primary" href="#third" input class="button" id="submit-btn" type="submit" value="Submit input" onclick="converter()">I'm Ready
-            </a>
           </div>
+        </div>
+
+        <!-- Submit Button - takes user to bottom of page-->
+        <div class="control has-text-centered">
+          <a class="button is-primary" href="#third" input class="button" id="submit-btn" type="submit" value="Submit input" onclick="converter()">I'm Ready
+          </a>
         </div>
       </div>
     </section> <!-- End of First Section -->
@@ -120,8 +121,12 @@
               <a href="trips.html"> <p id="buttEvents" class="options has-text-white has-text-centered has-text-weight-semibold">EVENTS</p></a>
             </div>
             <div class="column is-4 is-offset-2">
+<<<<<<< HEAD
               <p id="butt" class="options has-text-white has-text-centered has-text-weight-semibold"><a href="trips.html">ACTIVITIES</a></p>
 
+=======
+              <a href="trips.html"><p id="butt" class="options has-text-white has-text-centered has-text-weight-semibold">ACTIVITIES</p></a>
+>>>>>>> 9a5e91a08c8e4b612068417e40c2914daa3a9866
             </div>
           </div>
         </div>
