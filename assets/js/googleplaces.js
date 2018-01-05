@@ -1,6 +1,7 @@
 // userInput id needs to be changed!
 console.log(uid)
 
+
 //variables
 var map;
 var service;
