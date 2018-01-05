@@ -59,7 +59,6 @@ function handleEventsEndpointResponse(res) {
             capacity: event.capacity,
             img: img
         }
-        console.log(envs[event.id] );
     });
     envs["count"] = res.pagination.object_count
     return envs
@@ -93,7 +92,7 @@ function loadEBApi(url) {
         if ((status >= 200 && status < 300) || status == 304) {
             //status was good, parse into JSON
             res = JSON.parse(this.responseText)
-            console.log(res);
+
             if (endpoint == 'categories') {
                 handleCategoriesEndpointResponse(res)
     

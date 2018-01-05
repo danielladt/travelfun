@@ -57,8 +57,6 @@ function initMap() {
           latitude: results[0].geometry.location.lat(),
           longitude: results[0].geometry.location.lng()
         } 
-
-        console.log(loc);
         type  = getType()
         initialize(loc.latitude, loc.longitude, type);
       }

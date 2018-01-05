@@ -73,8 +73,6 @@ firebase.auth().signInAnonymously().catch(function(error) {
   if (user) { // User is signed in.
     var isAnonymous = user.isAnonymous;
     uid = user.uid;  
-    console.log(uid);
-    console.log("hey I'm here"); 
     // ...
   } else {
     // User is signed out.
@@ -92,7 +90,7 @@ $("#submitButton").on("click", function() {
 
   // What destination did they enter?
   var uDest = $("#userDestination").val().trim();
-  console.log(uDest);
+
   firebaseSave(uid);      // should this go in activities/events click?  
 });
        
@@ -101,10 +99,10 @@ $("#submitButton").on("click", function() {
 // Get user's interest - did they click events or activities?
 $("#activities").on("click", function() {        
     interest = "activities";
-    console.log(interest);
+
 });
 $("#events").on("click", function() {        
     interest = "events";
-    console.log(interest);
+
 });
   
