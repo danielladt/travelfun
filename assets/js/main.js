@@ -1,3 +1,5 @@
+var selection = '';
+
 // Navbar Burger
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -39,4 +41,4 @@ $(function() {
         }
       }
     });
-  });
+});

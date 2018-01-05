@@ -192,8 +192,9 @@ function loadEBApi(url) {
 
     xhr.send();
 }
-
-loadEBApi(url);
+if (selection === 'event') {
+    loadEBApi(url);
+}
 
 
 

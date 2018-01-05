@@ -110,7 +110,7 @@ function initMap() {
         var place = results[i];
 
         //shows the list of results
-        console.log(place);
+        console.log(results);
         createMarker(results[i]);
       }
     }
