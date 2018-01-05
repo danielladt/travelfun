@@ -1,3 +1,5 @@
+var selection = '';
+
 // Navbar Burger
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // End of Navbar Burger
+
 });
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -37,4 +41,4 @@ $(function() {
         }
       }
     });
-  });
+});
