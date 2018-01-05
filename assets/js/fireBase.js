@@ -83,7 +83,7 @@ firebase.auth().signInAnonymously().catch(function(error) {
 
 // Get user's destination info
 var interest = "";
-
+ 
 $("#submitButton").on("click", function() {
   // Don't refresh the page
   event.preventDefault();      
