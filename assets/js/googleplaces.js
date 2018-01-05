@@ -1,5 +1,5 @@
 // userInput id needs to be changed!
-console.log(uid)
+// console.log(uid)
 console.log("inside googleplaces.js");
 
 
@@ -19,14 +19,18 @@ var lon = "";
   // turning the user input into address for google
   // so there's been a change here that's not in your code
   // lets find it
-console.log('google places')
+// console.log('google places')
+var test3 = localStorage.getItem("test");
+console.log("testing local storage in googleplaces");
+console.log(test3);
+
 
 // turning the user input into address for google
 function converter() {
-  var myPlace = document.getElementById("userInput").value;
-  console.log(myPlace);
+  var myPlace = $("#userInput").val().trim();   
+  // console.log(myPlace);
   var address = myPlace;
-  console.log(address);
+  // console.log(address);
 }
 
 function initMap() {
@@ -45,16 +49,24 @@ function initMap() {
   var geocoder = new google.maps.Geocoder();
   infowindow = new google.maps.InfoWindow();
   //CHANGE THE ID
-  var address = document.getElementById("userInput").value;
+  var address = $("#userInput").val().trim();
 
         //event listener. CHANGE THE ID. this is the search button
   document.getElementById("butt").addEventListener("click", function(){
     geocodeAddress(geocoder, map);
-    console.log(results[0].geometry.location.lat());
-    localStorage.latitude   =  results[0].geometry.location.lat();
-    localStorage.longitude   =  results[0].geometry.location.lng();   
-    console.log(localStorage.longitude); 
+    // console.log(results[0].geometry.location.lat());     
   });
+
+    // Store latitude & longitude into localStorage
+    localStorage.setItem("latitude", results[0].geometry.location.lat());
+    localStorage.setItem("longitude", results[0].geometry.location.lng()); 
+    // Test
+      var test1 = localStorage.getItem("latitude");
+      console.log("testing 4 latitude/longitude");
+      console.log(test1);
+      console.log("testing grab from another page")
+      console.log(test2)
+
 
         // autocomplete. CHANGE THE ID
   var input = document.getElementById('userInput');
@@ -62,7 +74,7 @@ function initMap() {
 
       // locating the address on the map
   function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById("userInput").value;
+    var address = $("#userInput").val().trim();
     geocoder.geocode({'address': address}, function(results, status) {
       if (status === 'OK') {
         //if the address works, then the location is shown on the map
@@ -76,13 +88,13 @@ function initMap() {
         //GIVES US THE LATITUDE AND LONGITUDE
         var latitude = results[0].geometry.location.lat();;
         var longitude = results[0].geometry.location.lng();;
-        console.log(latitude);
-        console.log(longitude);
+        // console.log(latitude);
+        // console.log(longitude);
         var loc = {
               latitude,
               longitude
             } 
-          console.log(loc);
+          // console.log(loc);
         //type  = getType()
         initialize(loc.latitude, loc.longitude);
         }
@@ -119,7 +131,7 @@ function initMap() {
         var place = results[i];
 
         //shows the list of results
-        console.log(results);
+        // console.log(results);
         createMarker(results[i]);
       }
     }

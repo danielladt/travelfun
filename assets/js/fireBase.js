@@ -10,21 +10,37 @@
 
 var uidObject = {
   search: { 
-    "destination" : "NYC",
-    "latitude" : "10",
-    "longitude" : "10",
-    "date" : "01/03/2018"
+    "destination" : "Pluto",    
+    "latitude" : "17",  
+    "longitude" : "18", 
+    "date" : "10/03/18"
   },
-  selection: { // interestType will be either
-    "interestType" : "activities",
+  selection: {  
+    "interestType" : "",
     "options" : ["concert","theatre ","dining"]
   }  
   // favortites:{""}
 };
+// console.log(uidObject.search.latitude);
+// console.log(uidObject.selection.options[0]);; 
 
-console.log(uidObject.search.latitude);
-console.log(uidObject.selection.interestType[0]);
-  
+   // ****************************************************** 
+   //  localStorage Object modeled after uidObject -
+   //  used to collect data from any page
+   //  used to populate uidObject before sending to firebase
+    
+       // Initialize localStorage Object
+
+      localStorage.setItem("destination", uidObject.search.destination);
+      localStorage.setItem("latitude", uidObject.search.latitude);
+      localStorage.setItem("longitude", uidObject.search.destination);
+      localStorage.setItem("date", uidObject.search.date);
+      localStorage.setItem("interestType", uidObject.selection.interestType);
+      localStorage.setItem("options", uidObject.selection.options);
+       // Test
+      // var test2 = localStorage.getItem("options");
+      // console.log("testing");
+      // console.log(test2);     
 // ************************************************
 
 // Firebase Save function()
@@ -32,7 +48,8 @@ console.log(uidObject.selection.interestType[0]);
 // ref(uid) makes uid the root of the saved object in database
 // filled uidObject is saved to database
 function firebaseSave (uid) {    
-  database.ref(uid).set({      
+  database.ref(uid).set({ 
+  // localStorage.setItem("uid", uid);     // not sure right place
     dataBaseObject: uidObject          
   });     
 }
@@ -84,12 +101,12 @@ firebase.auth().signInAnonymously().catch(function(error) {
 // Get user's destination info
 var interest = "";
  
-$("#submitButton").on("click", function() {
+$("#submit-btn").on("click", function() {
   // Don't refresh the page
   event.preventDefault();      
 
   // What destination did they enter?
-  var uDest = $("#userDestination").val().trim();
+  var uDest = $("#userInput").val().trim();
 
   firebaseSave(uid);      // should this go in activities/events click?  
 });
@@ -97,11 +114,11 @@ $("#submitButton").on("click", function() {
     
 
 // Get user's interest - did they click events or activities?
-$("#activities").on("click", function() {        
+$("#butt").on("click", function() {        
     interest = "activities";
 
 });
-$("#events").on("click", function() {        
+$("#buttEvents").on("click", function() {        
     interest = "events";
 
 });

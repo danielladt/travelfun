@@ -15,7 +15,7 @@
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwvHrry2V2HDXcgHscCMgILEdyA2kgVMg&libraries=geometry,places&callback=initMap"
     async defer></script>
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    
   </head>
 
   <body>
@@ -74,7 +74,7 @@
               <div class="column"> <!-- two many divs? -->
                 <div class="field">
                   <div class="control has-icons-left has-icons-right">
-                    <input class="input is-medium is-primary" type="text" placeholder="Enter Date (MM/DD/YY)">
+                    <input id="userDate" class="input is-medium is-primary" type="text" placeholder="Enter Date (MM/DD/YY)">
                     <span class="icon is-small is-left"><i class="fa fa-calendar"></i></span>
                     <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
                   </div>
@@ -117,7 +117,7 @@
           <!-- 2 Columns with choices for user -->
           <div class="columns" id="choices">
             <div class="column is-4 is-offset-1">
-              <a href="trips.html"> <p class="options has-text-white has-text-centered has-text-weight-semibold">EVENTS</p></a>
+              <a href="trips.html"> <p id="buttEvents" class="options has-text-white has-text-centered has-text-weight-semibold">EVENTS</p></a>
             </div>
             <div class="column is-4 is-offset-2">
               <p id="butt" class="options has-text-white has-text-centered has-text-weight-semibold"><a href="trips.html">ACTIVITIES</a></p>
@@ -138,9 +138,13 @@
     <!-- End of Footer -->
 
     <!-- Javascript Links -->
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="./assets/js/firebase.js"></script>
     <script src="./assets/js/googleplaces.js"></script>
+    <script src="./assets/js/eventbrite.js"></script>
   </body>
 </html>
