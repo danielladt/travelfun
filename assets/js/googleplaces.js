@@ -23,7 +23,7 @@ var place =[];
     function initMap() {
         //google map
         var mapOptions = {
-          zoom:11,
+          zoom:10,
           center: new google.maps.LatLng(40.6700, -73.9400),
           styles: [{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]
         }
@@ -117,7 +117,7 @@ var place =[];
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
           infowindow.open(map, this);
-          document.getElementById("searchResults").innerHTML= place.name + "<br />" + "address:" + place.vicinity + "<br />" + "rating:" + place.rating;
+          document.getElementById("searchResults").innerHTML= "Name:" + place.name + "<br />" + "Address:" + place.vicinity + "<br />" + "Rating:" + place.rating;
         });
       }
     }
