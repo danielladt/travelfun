@@ -72,7 +72,7 @@
 });
 
   // Get user's destination info
-  var interest = "";
+  
 
    $("#submitButton").on("click", function() {
       // Don't refresh the page
@@ -85,9 +85,9 @@
          firebaseSave(uid);      // should this go in activities/events click?  
       });
        
-    
-
-   // Get user's interest - did they click events or activities?
+   // Get user's interest - did they click events or activities? 
+   var interest = "";
+   
    $("#activities").on("click", function() {        
         interest = "activities";
         console.log(interest);
