@@ -55,14 +55,11 @@ function initMap() {
   document.getElementById("butt").addEventListener("click", function(){
     geocodeAddress(geocoder, map);
 
-    console.log(results[0].geometry.location.lat());
-    localStorage.latitude   =  results[0].geometry.location.lat();
-    localStorage.longitude   =  results[0].geometry.location.lng();   
-    console.log(localStorage.longitude); 
+    // console.log(results[0].geometry.location.lat());
+    // localStorage.latitude   =  results[0].geometry.location.lat();
+    // localStorage.longitude   =  results[0].geometry.location.lng();   
+    // console.log(localStorage.longitude); 
 
-  });
-
-    // Store latitude & longitude into localStorage
     localStorage.setItem("latitude", results[0].geometry.location.lat());
     localStorage.setItem("longitude", results[0].geometry.location.lng()); 
     // Test
@@ -71,6 +68,9 @@ function initMap() {
       console.log(test1);
       console.log("testing grab from another page")
       console.log(test2)
+  });
+
+    // Store latitude & longitude into localStorage
 
 
         // autocomplete. CHANGE THE ID
