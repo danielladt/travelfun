@@ -11,6 +11,8 @@ var address;
 var service;
 var coordinates = {};
 var place = [];
+var lat = "";
+var lon = "";
 
   // turning the user input into address for google
   // so there's been a change here that's not in your code
@@ -46,6 +48,10 @@ function initMap() {
         //event listener. CHANGE THE ID. this is the search button
   document.getElementById("butt").addEventListener("click", function(){
     geocodeAddress(geocoder, map);
+    console.log(results[0].geometry.location.lat());
+    localStorage.latitude   =  results[0].geometry.location.lat();
+    localStorage.longitude   =  results[0].geometry.location.lng();   
+    console.log(localStorage.longitude); 
   });
 
         // autocomplete. CHANGE THE ID
