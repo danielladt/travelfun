@@ -8,8 +8,21 @@
 
 /*Home Page*/
 /*First Section*/
-#mainbg {
+#main-bg {
 	background-image: url("../images/firstpagebg.jpeg");
+	position: relative;
+}
+
+#main-bg::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background: linear-gradient(30deg,#f8e2c3a8,#e9d3b4cc );
+   filter: opacity(30%);
+   z-index position: -1;
 }
 
 #appname {
