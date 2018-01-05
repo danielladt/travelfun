@@ -109,7 +109,15 @@
 	align-items: inherit;
 }
 
+#map {
+	margin-bottom: 20px;
+}
+
 /*Contact Page*/
+#contact-section {
+	align-items: inherit;
+}
+
 #contact {
 	font-size: 38px;
 	font-family: 'Roboto', sans-serif;
