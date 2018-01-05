@@ -1,5 +1,9 @@
 /* Shared CSS */
 
+#map {
+		height:400px;
+		width:100%;
+	}
 
 .section-bg {
 	background-repeat: no-repeat;
