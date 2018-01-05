@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // End of Navbar Burger
+
 });
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
