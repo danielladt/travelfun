@@ -12,5 +12,4 @@
 - Results HTML snippet
 
 ## Sean
-- scroll function to trigger scroll animation from I'm Ready button click to the option Buttons on index.html
 - change output to reflect Daniella's code
