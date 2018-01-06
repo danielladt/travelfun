@@ -184,8 +184,10 @@ if (selection === 'event') {
 
 //wait for event to trigger
 $(document).ready( function () {
+    var lat = localStorage.getItem('latitude');
+    var lon = localStorage.getItem('longitude');
     endpoint = 'events/search'
     url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
-    url += "&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=40.329555&location.longitude=-74.061529&&location.within=5mi"
+    url += `&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=${lat}&location.longitude=${lon}&&location.within=5mi`
     loadEBApi(url)
 })
