@@ -4,6 +4,7 @@ function activatePlaceSearch () {
 
   $('#submit-btn').on('click', function () {
     var address = autocomplete.getPlace();
+    console.log(address)
     var lat = autocomplete.getPlace().geometry.location.lat();
     var lng = autocomplete.getPlace().geometry.location.lng();
     storeLocationDetails(lat, lng, address);
@@ -13,5 +14,5 @@ function activatePlaceSearch () {
 function storeLocationDetails (lat, lng, address) {
   localStorage.setItem('latitude', lat)
   localStorage.setItem('longitude', lng)
-  localStorage.setItem('address', address)
+  localStorage.setItem('address', JSON.stringify(address))
 }

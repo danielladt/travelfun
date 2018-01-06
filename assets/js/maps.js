@@ -46,14 +46,14 @@ function initMap() {
       };
 
     var address = localStorage.getItem('address')
-
+    address = JSON.stringify(address)
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
           //if the address works, then the location is shown on the map
-          resultsMap.setCenter(results[0].geometry.location);
+          map.setCenter(results[0].geometry.location);
           //marks the user's location on the map
           var marker = new google.maps.Marker({
-            map: resultsMap,
+            map: map,
             position: results[0].geometry.location
           });
         }
