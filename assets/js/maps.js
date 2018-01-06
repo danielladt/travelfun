@@ -78,8 +78,8 @@ function initMap() {
       position: place.geometry.location});
 
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
+    //   infowindow.setContent(place.name);
+    //   infowindow.open(map, this);
       //change the ID
       document.getElementById("searchResults").innerHTML= "Name:" + place.name + "<br />" + "Address:" + place.vicinity + "<br />" + "Rating:" + place.rating;
     });
