@@ -12,8 +12,8 @@ var address;
 var service;
 var coordinates = {};
 var place = [];
-var lat = "";
-var lon = "";
+var lat = localStorage.getItem('latitude')
+var lon = localStorage.getItem('longitude')
 
 
 
@@ -23,7 +23,7 @@ function initMap() {
 //google map style
   var mapOptions = {
     zoom:10,
-    center: new google.maps.LatLng(40.6700, -73.9400),
+    center: new google.maps.LatLng(lat, lon),
     styles: [{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]
   }
   //CHANGE THE ID
@@ -34,7 +34,8 @@ function initMap() {
   var geocoder = new google.maps.Geocoder();
   infowindow = new google.maps.InfoWindow();
   //CHANGE THE ID
-  initialize(40.6700, -73.9400)
+  
+  initialize(lat, lon)
 
 
   function initialize(lat, long) {
