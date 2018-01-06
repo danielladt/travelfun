@@ -1,5 +1,5 @@
 let token = 'ZLJFN27KYX3JQFOV64BA'
-let endpoint = 'categories'
+let endpoint = 'events/search'
 let url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
 let res
 let loader = document.querySelector('#loader')
@@ -7,7 +7,7 @@ let cats = {}
 let envs = {}
 let catVal
 var elem = document.getElementById('root');
-let results = document.getElementById('results')
+let results = document.getElementById('eventbrite-mount')
 
 console.log('eventbrite')
 
@@ -94,21 +94,21 @@ function loadEBApi(url) {
             res = JSON.parse(this.responseText)
 
             if (endpoint == 'categories') {
-                handleCategoriesEndpointResponse(res)
+                // handleCategoriesEndpointResponse(res)
     
-                //take the cats {categories} ID and name and load into select options
-                Object.keys(cats).forEach(function(key) {
+                // //take the cats {categories} ID and name and load into select options
+                // Object.keys(cats).forEach(function(key) {
     
-                    let opt = document.createElement("OPTION")
-                    opt.value = key
-                    opt.innerHTML = cats[key]
-                    elem.appendChild(opt)
+                //     let opt = document.createElement("OPTION")
+                //     opt.value = key
+                //     opt.innerHTML = cats[key]
+                //     elem.appendChild(opt)
                   
-                  });
-                  //set a default category value
-                  catVal = elem.value
-                  //remove the loader created by onprogress function
-                  document.body.className = ""
+                //   });
+                //   //set a default category value
+                //   catVal = elem.value
+                //   //remove the loader created by onprogress function
+                //   document.body.className = ""
             } else {
                 //if categories is not the endpoint, then we are in the events endpoint
                 //reset the previous {events} object envs
@@ -121,34 +121,42 @@ function loadEBApi(url) {
 
                     //count used internally, not for user
                     if (key === 'count') {
+                        console.log(envs[key])
                         return
                     }
-
+                    
                     /**
                      * @see https://bulma.io/documentation/components/card/
                      */
                     let output = `
-                    <div class="column is-3">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                            <img src="${envs[key].img}" alt="Travel Fun!">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
+                     <div class="tile is-vertical">
+                        <div class="tile">
+                        <div class="tile is-parent is-horizontal">
+                            <article class="tile is-child notification">
+                            <p class="title has-text-dark"> ${envs[key].name} </p>
+                            <div class="box">
+                                <article class="media">
+                                <figure class="media-left">
+                                    <p class="image is-128x128">
+                                    <img src=${envs[key].img}">
+                                    </p>
+                                </figure>
                                 <div class="media-content">
-                                    <p class="title is-4">${envs[key].name}</p>
-                                    <p class="subtitle is-6"><a href="${envs[key].url}" target="_blank" title="To Event Brite!">Event URL</a></p>
+                                    <div class="content">
+                                    <h4 id="title"> Event </h4>
+                                    <p id="description"> Description </p>
+                                    <p id="time-capacity"> Time: ${envs[key].time.start}
+                                    <span> Capacity: ${envs[key].capacity}</span>
+                                    </p>
+                                    <p id="event-url"> <a href="${envs[key].url}">Event Website</a></p>
+                                    </div>
                                 </div>
+                                </article>
                             </div>
-
-                            <div class="content">
-                            ${envs[key].description}
-                            <time datetime="2016-1-1">${envs[key].time.start}</time>
-                            </div>
+                            </article>
                         </div>
-                    </div></div>
+                        </div>
+                    </div>
                     `
 
                     //if there has been an issue with output, no time to handle errors
@@ -175,7 +183,7 @@ function loadEBApi(url) {
                         y: -15,
                         autoAlpha: 0,
                         ease: Power1.easeOut
-                    }, 0.5)
+                    }, 1.5)
                 }, 1500)
             }
 
@@ -197,15 +205,10 @@ if (selection === 'event') {
 }
 
 
-
-elem.addEventListener('change', function() {
-    catVal = elem.value
-}, false);
-
 //wait for event to trigger
-document.querySelector('#butt').addEventListener('click', function () {
+$(document).ready( function () {
     endpoint = 'events/search'
     url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
-    url += "&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=40.329555&location.longitude=-74.061529&categories=" + catVal + "&location.within=5mi"
+    url += "&start_date.range_start=2017-12-31T19:00:00&start_date.range_end=2018-01-31T19:00:00&location.latitude=40.329555&location.longitude=-74.061529&&location.within=5mi"
     loadEBApi(url)
 })
