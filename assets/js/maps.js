@@ -18,6 +18,7 @@ var lon = "";
 
 
 function initMap() {
+    var geocoder = new google.maps.Geocoder();
 //all of my changes are here
 //google map style
   var mapOptions = {
@@ -34,18 +35,7 @@ function initMap() {
   infowindow = new google.maps.InfoWindow();
   //CHANGE THE ID
   initialize(40.6700, -73.9400)
-  
-    /* this is supposed to be the getType function (where the user could chose their type)
-    var type = ['restaurant' ,  'bar' , 'shopping_mall' , 'museum' , 'amusement_park'];
-    var arrayType = type.length
-    
-    function getType() {
-      var select = document.getElementById("selectType");
-      var objSelect = select.selectedIndex;
-      console.log(objSelect); 
-      
-      }
-      */
+
 
   function initialize(lat, long) {
     var pyrmont = new google.maps.LatLng(lat, long);
@@ -55,11 +45,27 @@ function initMap() {
         type: ['restaurant']
       };
 
+    var address = localStorage.getItem('address')
+
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+          //if the address works, then the location is shown on the map
+          resultsMap.setCenter(results[0].geometry.location);
+          //marks the user's location on the map
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        }
+    })
+
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
+    console.log('event')
   }
 
   function callback(results, status) {
+      console.log('cb')
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
@@ -72,6 +78,7 @@ function initMap() {
   }
 
   function createMarker(place) {
+      console.log('marker')
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
