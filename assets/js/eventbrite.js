@@ -1,15 +1,13 @@
-let token = 'ZLJFN27KYX3JQFOV64BA'
-let endpoint = 'events/search'
-let url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`
-let res
-let loader = document.querySelector('#loader')
-let cats = {}
-let envs = {}
-let catVal
+let token = 'ZLJFN27KYX3JQFOV64BA';
+let endpoint = 'events/search';
+let url = `https://www.eventbriteapi.com/v3/${endpoint}/?token=${token}`;
+let res;
+let loader = document.querySelector('#loader');
+let cats = {};
+let envs = {};
+let catVal;
 var elem = document.getElementById('root');
-let results = document.getElementById('eventbrite-mount')
-
-console.log('eventbrite')
+let results = document.getElementById('eventbrite-mount');
 
 /**
  * @param {*} res type object
@@ -18,14 +16,14 @@ console.log('eventbrite')
  * @see https://www.eventbrite.com/developer/v3/endpoints/categories/
  */
 function handleCategoriesEndpointResponse(res) {
-    let categories = res.categories
+    let categories = res.categories;
 
     document.querySelector('#root').innerHTML = '';
     categories.forEach( category  => {
 
-        cats[category.id] = category.short_name
+        cats[category.id] = category.short_name;
     });
-    return cats
+    return cats;
 }
 
 /**
@@ -37,14 +35,14 @@ function handleCategoriesEndpointResponse(res) {
  * @see https://www.eventbrite.com/developer/v3/endpoints/events/
  */
 function handleEventsEndpointResponse(res) {
-    let events = res.events
+    let events = res.events;
 
     events.forEach( event  => {
 
         if (!event.logo) {
-            let img = false
+            let img = false;
         } else {
-            img = event.logo.original.url
+            img = event.logo.original.url;
         }
 
         envs[event.id] = {
@@ -60,8 +58,8 @@ function handleEventsEndpointResponse(res) {
             img: img
         }
     });
-    envs["count"] = res.pagination.object_count
-    return envs
+    envs["count"] = res.pagination.object_count;
+    return envs;
 }
 
 /**
@@ -74,7 +72,7 @@ function handleEventsEndpointResponse(res) {
  */
 function loadEBApi(url) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true)
+    xhr.open('GET', url, true);
 
     /**
      * 
@@ -83,113 +81,92 @@ function loadEBApi(url) {
      * @see ./assets/css/style.css
      */
     xhr.onprogress = function (e) {
-        document.body.className = "loading"
+        document.body.className = "loading";
     }
 
     xhr.onload = function () {
         //use the xhr object property status to check the result of the request
-        status = this.status
+        status = this.status;
         if ((status >= 200 && status < 300) || status == 304) {
             //status was good, parse into JSON
-            res = JSON.parse(this.responseText)
+            res = JSON.parse(this.responseText);
+            envs = {};
+            results.innerHTML = '';
+            handleEventsEndpointResponse(res);
 
-            if (endpoint == 'categories') {
-                // handleCategoriesEndpointResponse(res)
-    
-                // //take the cats {categories} ID and name and load into select options
-                // Object.keys(cats).forEach(function(key) {
-    
-                //     let opt = document.createElement("OPTION")
-                //     opt.value = key
-                //     opt.innerHTML = cats[key]
-                //     elem.appendChild(opt)
-                  
-                //   });
-                //   //set a default category value
-                //   catVal = elem.value
-                //   //remove the loader created by onprogress function
-                //   document.body.className = ""
-            } else {
-                //if categories is not the endpoint, then we are in the events endpoint
-                //reset the previous {events} object envs
-                envs = {}
-                results.innerHTML = ''
-                handleEventsEndpointResponse(res)
+            //take the envs {events} and output them to the screen
+            Object.keys(envs).forEach(function(key) {
 
-                //take the envs {events} and output them to the screen
-                Object.keys(envs).forEach(function(key) {
-
-                    //count used internally, not for user
-                    if (key === 'count') {
-                        console.log(envs[key])
-                        return
-                    }
-                    
-                    /**
-                     * @see https://bulma.io/documentation/components/card/
-                     */
-                    let output = `
-                     <div class="tile is-vertical">
-                        <div class="tile">
-                        <div class="tile is-parent is-horizontal">
-                            <article class="tile is-child notification">
-                            <p class="title has-text-dark"> ${envs[key].name} </p>
-                            <div class="box">
-                                <article class="media">
-                                <figure class="media-left">
-                                    <p class="image is-128x128">
-                                    <img src=${envs[key].img}">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                    <h4 id="title"> Event </h4>
-                                    <p id="description"> Description </p>
-                                    <p id="time-capacity"> Time: ${envs[key].time.start}
-                                    <span> Capacity: ${envs[key].capacity}</span>
-                                    </p>
-                                    <p id="event-url"> <a href="${envs[key].url}">Event Website</a></p>
-                                    </div>
+                //count used internally, not for user
+                if (key === 'count') {
+                    console.log(envs[key]);
+                    return
+                }
+                
+                /**
+                 * @see https://bulma.io/documentation/components/card/
+                 */
+                let output = `
+                <div class="tile is-vertical">
+                    <div class="tile">
+                    <div class="tile is-parent is-horizontal">
+                        <article class="tile is-child notification">
+                        <p class="title has-text-dark"> ${envs[key].name} </p>
+                        <div class="box">
+                            <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-128x128">
+                                <img src=${envs[key].img}">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <h4 id="title"> Event </h4>
+                                <p id="description"> Description </p>
+                                <p id="time-capacity"> Time: ${envs[key].time.start}
+                                <span> Capacity: ${envs[key].capacity}</span>
+                                </p>
+                                <p id="event-url"> <a href="${envs[key].url}">Event Website</a></p>
                                 </div>
-                                </article>
                             </div>
                             </article>
                         </div>
-                        </div>
+                        </article>
                     </div>
-                    `
+                    </div>
+                </div>
+                `
 
-                    //if there has been an issue with output, no time to handle errors
-                    if (!output) {
-                        return
-                    }
+                //if there has been an issue with output, no time to handle errors
+                if (!output) {
+                    return
+                }
 
-                    results.innerHTML += output
-                });
-                //hide the results and use the loader for default of 0.5s
-                results.style.display = 'none'
-                setTimeout(function () {
-                    document.body.className = ""
-                    results.style.display = 'inline-flex'
-                    results.style.flexWrap = 'wrap'
-                    
-                    /**
-                     * @name TimelineLite
-                     * @see https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js
-                     * @description makes javascript triggered CSS animations easier
-                     */
-                    let tl = new TimelineLite()
-                    tl.staggerFrom(results.children, 0.3, {
-                        y: -15,
-                        autoAlpha: 0,
-                        ease: Power1.easeOut
-                    }, 1.5)
-                }, 1500)
-            }
+                results.innerHTML += output;
+            });
+            //hide the results and use the loader for default of 0.5s
+            results.style.display = 'none';
+            setTimeout(function () {
+                document.body.className = "";
+                results.style.display = 'inline-flex';
+                results.style.flexWrap = 'wrap';
+                
+                /**
+                 * @name TimelineLite
+                 * @see https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js
+                 * @description makes javascript triggered CSS animations easier
+                 */
+                let tl = new TimelineLite();
+                tl.staggerFrom(results.children, 0.3, {
+                    y: -15,
+                    autoAlpha: 0,
+                    ease: Power1.easeOut
+                }, 1.5);
+            }, 1500);
 
             
         } else {
-            loader.innerHTML = 'Not Found'
+            loader.innerHTML = 'Not Found';
         }
     }
 

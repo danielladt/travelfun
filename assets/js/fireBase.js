@@ -5,9 +5,6 @@
  //    latitude/longitude - google supplies based on user destination
  //    date, interestType - user supplies
  //    options - eventbrite API supplies
-
- console.log('firebase')
-
 var uidObject = {
   search: { 
     "destination" : "Pluto",    
@@ -91,9 +88,6 @@ firebase.auth().signInAnonymously().catch(function(error) {
     var isAnonymous = user.isAnonymous;
     uid = user.uid;  
     // ...
-  } else {
-    // User is signed out.
-    // ...
   }
   // ...
 });
@@ -120,6 +114,5 @@ $("#butt").on("click", function() {
 });
 $("#buttEvents").on("click", function() {        
     interest = "events";
-
 });
   
