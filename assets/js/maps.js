@@ -22,7 +22,7 @@ function initMap() {
 //all of my changes are here
 //google map style
   var mapOptions = {
-    zoom:10,
+    zoom:16,
     center: new google.maps.LatLng(lat, lon),
     styles: [{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]
   }
@@ -42,12 +42,12 @@ function initMap() {
     var pyrmont = new google.maps.LatLng(lat, long);
     var request = {
         location: pyrmont,
-        radius: '20',
+        radius: '1500',
         type: ['restaurant']
       };
 
     var address = localStorage.getItem('address')
-    address = JSON.stringify(address)
+
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
           //if the address works, then the location is shown on the map
@@ -79,7 +79,7 @@ function initMap() {
   }
 
   function createMarker(place) {
-      console.log('marker')
+      console.log(place)
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
