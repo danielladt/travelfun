@@ -81,7 +81,7 @@ function initMap() {
     //   infowindow.setContent(place.name);
     //   infowindow.open(map, this);
       //change the ID
-      document.getElementById("searchResults").innerHTML= "Name:" + place.name + "<br />" + "Address:" + place.vicinity + "<br />" + "Rating:" + place.rating;
+      document.getElementById("searchResults").innerHTML= "Name: " + place.name + "<br />" + "Address: " + place.vicinity + "<br />" + "Rating: " + place.rating;
     });
 
   }
