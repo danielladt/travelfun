@@ -32,8 +32,8 @@ var uidObject = {
        // Initialize localStorage Object
 
       localStorage.setItem("destination", uidObject.search.destination);
-      localStorage.setItem("latitude", uidObject.search.latitude);
-      localStorage.setItem("longitude", uidObject.search.destination);
+      // localStorage.setItem("latitude", uidObject.search.latitude);
+      // localStorage.setItem("longitude", uidObject.search.destination);
       localStorage.setItem("date", uidObject.search.date);
       localStorage.setItem("interestType", uidObject.selection.interestType);
       localStorage.setItem("options", uidObject.selection.options);
